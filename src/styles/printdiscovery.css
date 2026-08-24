@@ -1,0 +1,122 @@
+.pd-screen{min-height:100vh;background:#fff;color:#302722;display:flex;flex-direction:column}
+
+/* TOP BAR */
+.pd-topbar{height:64px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 12px 0 14px;border-bottom:1px solid #eee6df;box-sizing:border-box;flex-shrink:0; position:sticky;top:0;z-index:1000;}
+.pd-brand{display:flex;align-items:center;gap:12px}
+.pd-brand-icon{width:52px;height:52px;border-radius:12px;background:#e8500b;color:#fff;display:grid;place-items:center}
+.pd-brand strong{font:700 20px var(--font-body,Inter,sans-serif)}
+.pd-brand strong span{color:#e8500b}
+.pd-back-btn{width:42px;height:42px;border:1px solid #f0dfd6;border-radius:50%;background:#fff;color:#e8500b;display:grid;place-items:center;cursor:pointer}
+
+/* PRINTER CONNECTION */
+.pd-screen>.pd-printer-status,.pd-screen>.pd-no-printer{
+  height:152px;margin:10px 10px 0;border:1px solid #ffd9ca;border-radius:18px;
+  background:linear-gradient(135deg,#fffaf7,#fff2ec);box-sizing:border-box;flex-shrink:0
+}
+
+.pd-screen>.pd-printer-status{padding:12px;display:flex;align-items:center;gap:12px}
+.pd-printer-image{width:92px;height:105px;display:grid;place-items:center;position:relative;color:#454545;flex-shrink:0}
+.pd-printer-image svg{width:78px;height:78px}
+.pd-online-dot{position:absolute;right:5px;bottom:17px;width:13px;height:13px;border:4px solid #fff;border-radius:50%;background:#18a957}
+.pd-printer-info{min-width:0;flex:1}
+.pd-status{display:inline-flex;align-items:center;padding:4px 8px;border-radius:10px;font-size:9px;font-weight:700}
+.connected-status{background:#eaf8ed;color:#16833f}
+.pd-printer-info h2{margin:6px 0 2px;font-size:16px;line-height:1.15}
+.pd-printer-info p{margin:0;color:#71655e;font-size:10px}
+.pd-printer-info p strong{color:#e8500b}
+.pd-status-badges{display:flex;gap:5px;margin-top:8px;flex-wrap:wrap}
+.pd-status-badges span{display:flex;align-items:center;gap:3px;padding:4px 7px;border:1px solid #eee4dd;border-radius:8px;background:#fff;font-size:8px;color:#665b55}
+.pd-printer-action{display:flex;align-items:center;justify-content:center;gap:5px;border-radius:10px;padding:9px 12px;font:600 9px var(--font-body,Inter,sans-serif);cursor:pointer;white-space:nowrap}
+.pd-printer-action.disconnect{border:1px solid #ff6630;background:#fff;color:#e8500b}
+
+/* NO PRINTER */
+.pd-screen>.pd-no-printer{padding:16px 18px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border-style:dashed}
+.pd-no-printer-icon{position:relative;width:58px;height:58px;border-radius:50%;background:#fff4ee;color:#7d7772;display:grid;place-items:center;margin-bottom:7px}
+.pd-no-printer-icon svg{width:42px;height:42px}
+.pd-no-printer-icon i{position:absolute;right:-2px;bottom:0;width:20px;height:20px;border-radius:50%;background:#f04f1b;color:#fff;font:700 14px Arial;display:grid;place-items:center;font-style:normal}
+.pd-no-printer h2{margin:0 0 4px;font-size:17px}
+.pd-no-printer p{margin:0 0 12px;color:#8d8179;font-size:10px}
+.pd-printer-action.connect{border:0;background:#f05a18;color:#fff;padding:10px 18px;font-size:9px}
+
+/* TABS */
+.pd-tabs{height:42px;margin:10px 10px 0;padding:3px;display:flex;align-items:center;border-radius:16px;background:#f1ece9;box-sizing:border-box;flex-shrink:0}
+.pd-tab{flex:1;height:34px;border:0;border-radius:13px;background:transparent;color:#7e736d;display:flex;align-items:center;justify-content:center;gap:6px;font:600 10px var(--font-body,Inter,sans-serif);cursor:pointer}
+.pd-tab.active{background:#fff;color:#e8500b;box-shadow:0 3px 8px rgba(70,45,30,.08)}
+
+/* SCANNING */
+.pd-scan-card{margin:10px 10px 0;min-height:78px;padding:8px 12px;display:flex;align-items:center;gap:10px;box-sizing:border-box;border:1px solid #ffe0d2;border-radius:16px;background:linear-gradient(135deg,#fff9f6,#fff1eb);flex-shrink:0}
+.pd-radar{width:62px;height:62px;position:relative;flex-shrink:0;display:grid;place-items:center;border-radius:50%}
+.pd-radar-ring{position:absolute;border:1.5px solid #ffc9b3;border-radius:50%;animation:pd-radar 1.8s ease-out infinite}
+.ring-1{width:58px;height:58px}
+.ring-2{width:42px;height:42px;animation-delay:.35s}
+.ring-3{width:27px;height:27px;animation-delay:.7s}
+.pd-radar-dot{width:13px;height:13px;border-radius:50%;background:#f05a18;box-shadow:0 0 0 8px rgba(240,90,24,.12)}
+@keyframes pd-radar{0%{transform:scale(.45);opacity:1}100%{transform:scale(1.1);opacity:0}}
+.pd-scan-info{min-width:0;flex:1}
+.pd-scan-info h3{margin:0;font-size:11px;font-weight:700}
+.pd-scan-info p{margin:3px 0 7px;color:#8d8179;font-size:8px}
+.pd-progress-track{height:4px;overflow:hidden;border-radius:10px;background:#ffdcd0}
+.pd-progress-fill{height:100%;border-radius:inherit;background:#f05a18;transition:width .12s linear}
+.pd-scan-percent{width:30px;display:flex;flex-direction:column;align-items:center;gap:7px;color:#f05a18}
+.pd-scan-percent strong{font-size:9px}
+.pd-scan-percent svg{width:17px;height:17px}
+
+/* AVAILABLE PRINTERS */
+.pd-available{margin:12px 10px 0}
+.pd-available-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.pd-available-header h3{margin:0;font-size:14px;font-weight:700;color:#302722}
+.pd-available-header h3 span{display:inline-grid;place-items:center;min-width:18px;height:18px;margin-left:5px;padding:0 4px;border-radius:9px;background:#fff0e9;color:#e8500b;font-size:9px}
+.pd-scan-again-btn{display:flex;align-items:center;gap:5px;padding:7px 11px;border:1px solid #f1ddd4;border-radius:12px;background:#fff;color:#e8500b;font:600 9px var(--font-body,Inter,sans-serif);cursor:pointer}
+.pd-printer-list{display:flex;flex-direction:column;gap:7px}
+.pd-printer-card,.pd-connected-card{
+  height:72px;padding:7px 8px;display:flex;align-items:center;gap:9px;
+  border:1px solid #eee5df;border-radius:13px;background:#fff;box-sizing:border-box;
+  box-shadow:0 2px 8px rgba(60,40,25,.04)
+}
+.pd-printer-picture{width:58px;height:56px;flex-shrink:0;display:grid;place-items:center;border-radius:10px;background:#f5f3f1;color:#444}
+.pd-printer-picture svg{width:38px;height:38px}
+.pd-printer-details{min-width:0;flex:1}
+.pd-printer-details h4{margin:0 0 2px;font-size:10px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pd-printer-details p{margin:0;color:#81766f;font-size:7.5px}
+.pd-printer-details p b{color:#c6bbb4;margin:0 3px}
+.pd-printer-card .pd-printer-status,.pd-connected-card .pd-printer-status{
+  height:auto;min-height:0;margin:4px 0 0;padding:0;border:0;border-radius:0;
+  background:none;display:flex;align-items:center;gap:9px
+}
+.pd-printer-card .pd-printer-status>span,.pd-connected-card .pd-printer-status>span{color:#21a45d;font-size:7px;font-weight:700}
+.pd-connect-btn{flex-shrink:0;border:0;border-radius:8px;background:#ed570e;color:#fff;padding:8px 12px;font:600 8px var(--font-body,Inter,sans-serif);cursor:pointer}
+.pd-connect-btn:hover{background:#d94c09}
+.pd-connect-btn.connected{background:#21a45d;border-color:#21a45d}
+.pd-connect-btn.connected:hover{background:#188c4d}
+
+/* CONNECTED / RECENT */
+.pd-connected-list{margin:12px 10px 0}
+.pd-connected-card .pd-printer-picture{width:58px;height:56px}
+.pd-connected-empty{
+  margin:12px 10px 0;padding:42px 20px;text-align:center;
+  border:1px dashed #ffd9ca;border-radius:16px;background:#fffaf7;color:#8d8179
+}
+.pd-connected-empty svg{margin-bottom:8px;color:#aaa19b}
+.pd-connected-empty h3{margin:0 0 5px;color:#302722;font-size:14px}
+.pd-connected-empty p{margin:0;font-size:10px}
+
+/* SIGNAL */
+.signal-bars{display:flex;align-items:flex-end;gap:2px;height:12px}
+.signal-bar{width:2px;height:4px;border-radius:2px;background:#ddd}
+.signal-bar:nth-child(2){height:6px}
+.signal-bar:nth-child(3){height:9px}
+.signal-bar:nth-child(4){height:12px}
+.signal-bar.filled{background:#28a85f}
+
+/* FOOTER */
+.pd-footer{margin-top:auto;padding:16px 12px;text-align:center;color:#c4b8b0;font-size:10px;flex-shrink:0}
+
+/* MOBILE */
+@media(max-width:420px){
+  .pd-screen>.pd-printer-status,.pd-screen>.pd-no-printer{height:152px}
+  .pd-screen>.pd-printer-status{gap:8px;padding:10px}
+  .pd-printer-image{width:78px;height:95px}
+  .pd-printer-image svg{width:68px;height:68px}
+  .pd-printer-info h2{font-size:14px}
+  .pd-printer-action.disconnect{padding:8px 9px;font-size:8px}
+}
